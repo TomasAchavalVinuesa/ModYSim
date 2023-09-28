@@ -3,9 +3,14 @@ public class Main {
         GeneradorCongruencialMixto generador1 = new GeneradorCongruencialMixto(128, 13, 127, 42);
         int periodo = generador1.obtenerPeriodo();
         System.out.println(periodo);
-
+        /*
         double[] a = new double[periodo];
         a=generador1.obtenerMuestraParcial(periodo);
+        for (int i = 0; i< periodo; i++){
+            System.out.println("Número generado: "+"\u001B[32m" + a[i] + "\u001B[0m");
+        }*/
+
+        double[] a = normalizadorNumeros.normalizar(generador1, periodo, 8);
         for (int i = 0; i< periodo; i++){
             System.out.println("Número generado: "+"\u001B[32m" + a[i] + "\u001B[0m");
         }

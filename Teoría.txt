@@ -76,3 +76,54 @@ En sistema binario:
     -multiplicadorA se debe obtener de: multiplicadorA = 8*t +- 3 (t es cualquier entero)
     -moduloM = 2^d
 
+Unidad 3 - Pruebas estadísticas para números pseudoaleatorios
+
+Como las variables aleatorias no uniformes son obtenidas de números uniformes (0;1), se hace énfasis en pruebas
+estadísticas respecto al generador de números pseudoaleatorios (ya que una deficiencia estadística en la distribución
+de la variable aleatoria será por la deficiencia del generador de números pseudoaleatorios) Estas pruebas estadísticas prueban
+la aleatoriedad de los números pseudoaleatorios
+
+Prueba de promedios:
+
+La función de densidad de probabilidad más simple (la función de densidad uniforme) se caracteriza por ser constante en (0 , 1) 
+y 0 fuera de él (esta función define la distribución uniforme)
+
+	{1 si 0 <= x <= 1
+f(x)	{
+	{0 si 0 > x > 1
+
+donde x es una variable aleatoria definida en (0 , 1)
+
+La distribución acumulada F(x) de una variable aleatoria x uniformemente distribuida se puede obtener como:
+
+F(x) = integral desde 0 hasta x de  1dt = x
+
+el valor esperado de una variable aleatoria uniformemente distribuida está dado por E(x) = integral desde 0 hasta x de x(1)dx = 1/2
+
+la varianza de una variable uniformemente distribuida está dada por: var(x) =integral desde 0 hasta x de (x-1/2)^2 (1)dx = 1/12
+
+Conociendo los parámetros de la distribución uniforme, se plantea la hipótesis de promédios
+(se trata de probar que los números generados provienen de un universo uniforme con media de 0.5)
+
+hipótesis nula H sub 0 : u = 1/2
+hipótesis alternativa H sub 1 : u != 1/2
+
+para realizar la prueba se requiere:
+
+1 obtener una muestra de tamaño N (generar N números pseudoaleatorios)
+
+2 Evaluar su promedio aritmético siguiendo esta expresión:
+
+	~x~ = (U sub 1 + U sub 2 + ... U sub n) / N 
+
+(se suman todos los valores de la muestra y se dividen por la cantidad de elementos de la muestra)
+
+3 se determina el valor del estadístico Z sub 0 siguiendo la expresión:
+
+	Z sub 0 = ((~x~ -1/2) * raiz cuadrada(N))/ raiz cuadrada(1/12)
+
+Alfa es el nivel de significado 
+
+Ahora si el valor absoluto de Z sub 0 es < Z sub alfa/2, entonces no se puede rechazar la hipótesis de los números pseudoaleatorios
+generados provienen de un universo uniforme con media de 0.5
+
